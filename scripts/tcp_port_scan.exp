@@ -1,0 +1,24 @@
+#!/usr/bin/env -S expect -f
+# Check port with Expect and Telnet
+# Author: Jose Vicente Nunez <@josevnz@fosstodon.org>
+if { $argc == 0 } {
+        send_user "Please provide the data file with machine port, one per line!"
+        exit 100
+}
+set timeout 5
+set f [open [lindex $argv 0]]
+foreach host [split [read $f] "\n"] {
+    set pairs [split $host " "];
+    set machine [lindex $pairs 0]
+    set ports [lindex $pairs 1]
+    foreach port [split $ports ","] {
+        log_user 0
+        spawn /bin/telnet -e ! $machine $port
+        expect {
+            log_user 1
+            "Connection refused" { catch {exp_close}; exp_wait; send_user "ERROR: $machine -> $port\n" }
+            "Escape character is '!'." { send_user "OK: $machine -> $port\n"; send "!\r" }
+        }
+    }
+}
+close $f
