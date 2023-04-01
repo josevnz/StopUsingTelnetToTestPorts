@@ -487,6 +487,19 @@ Most Linux distributions have a package for it, on Fedora it is pretty easy to i
 [josevnz@dmaf5 ~]$ sudo dnf install -y python3-scapy.noarch
 ```
 
+Scapy require elevated privileges to run, if you decide to use a pip then you may do the following:
+
+```shell
+sudo -i
+python3 -m venv /usr/local/scapy
+. /usr/local/scapy/bin/activate
+pip install --upgrade pip
+pip install wheel
+pip install scapy
+```
+
+Just remember to activate your virtual environment before calling Scapy if you install it that way.
+
 Scapy can be used as a library and also as an interactive shell, I'll show you next a few applications.
 
 ### A simple interactive TCP port scanner
