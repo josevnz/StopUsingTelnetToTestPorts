@@ -610,6 +610,8 @@ ERROR -> 192.168.1.30:22
 ERROR -> 192.168.1.30:80
 ```
 
+The real power of Scapy is the level of customization you now have from a familiar language like Python. The shell mode is particular important as you can troubleshoot network problems with ease while doing some exploration work.
+
 ## Wrapping up, what to learn next
 
 * Expect is an extension of TCL, so [you should read more](https://wiki.tcl-lang.org/page/Tcl+Tutorial+Lesson+0) if you want to get familiar with what the language can do.
