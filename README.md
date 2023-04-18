@@ -33,7 +33,6 @@ On this article I will show you how to perform the following tasks:
 * How you can do the same with Bash
 * How to use Netcat as a replacement of a tcp check
 * Using NMAP to perform more complex checks
-* Further automation with Ansible and NMAP
 * Writing your port check program with Scapy
 
 We will focus on TCP connectivity testing as opposed to UDP.
