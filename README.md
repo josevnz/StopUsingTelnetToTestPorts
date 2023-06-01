@@ -1,5 +1,7 @@
 # Stop using telnet to test ports
 
+![](blue-network-cable-raspberry-pi.jpg)
+
 Most of you know telnet. It was the most common way to access remote systems before more robust and secure alternatives like SSH showed up.
 
 Telnet protocol is not encrypted and that is the reason nobody uses it to provide access to a server anymore. Instead, people use it to check if a service
